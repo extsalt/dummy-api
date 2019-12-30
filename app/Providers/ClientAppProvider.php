@@ -3,18 +3,19 @@
 namespace App\Providers;
 
 use App\App;
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class ClientAppProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
     public function register()
     {
-        $this->app->bind(App::class, function ($app) {
+        $this->app->singleton(App::class, function ($app) {
             return App::query()->where('app_id', request()->get('app_id'))
                 ->where('app_secret', request()->get('app_secret'))
                 ->first();
@@ -22,11 +23,12 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
     public function boot()
     {
+
     }
 }

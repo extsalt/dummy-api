@@ -25,7 +25,7 @@ class PostStoreRequest extends FormRequest
     {
         return [
             'body' => ['sometimes'],
-            'photo' => ['sometimes']
+            'photo' => ['sometimes', 'image']
         ];
     }
 }
