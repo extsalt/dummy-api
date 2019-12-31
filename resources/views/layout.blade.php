@@ -1,7 +1,10 @@
 <html>
 <head>
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/birju.css">
     <script src="/js/jquery.js"></script>
+    <script src="/js/handlerbar.js"></script>
+    <script src="/js/rxjs.js"></script>
 </head>
 
 <body>

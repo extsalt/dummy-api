@@ -51,3 +51,9 @@ Route::get('/timeline', function () {
 Route::get('/birju', function () {
     return view('birju.index');
 });
+
+Route::post('/birju/process', function () {
+    return request()->all();
+});
+
+Route::post('/birju/optimise', 'PhotoOptimiseController@optimise');
